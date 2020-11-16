@@ -13,6 +13,21 @@ def encrypt(text: str):
     return "".join(result).strip()
 
 
+def decrypt(encrypted_text: str):
+    words = encrypted_text.split(" ")
+    result = []
+
+    for word in words:
+        for char in word:
+            if char.isupper():
+                result.append(chr((ord(char) - 3 - 65) % 26 + 65))
+            else:
+                result.append(chr((ord(char) - 3 - 97) % 26 + 97))
+        result.append(" ")
+
+    return "".join(result).strip()
+
+
 if __name__ == "__main__":
     # Encrypt
     expected1 = "Khoor Zruog"
@@ -32,4 +47,20 @@ if __name__ == "__main__":
     assert expected3 == result3
     assert expected4 == result4
 
-
+    # Decrypt
+    expected5 = "Hello World"
+    result5 = decrypt("Khoor Zruog")
+    print(result5)
+    expected6 = "Ahmed"
+    result6 = decrypt("Dkphg")
+    print(result6)
+    expected7 = "Ziad"
+    result7 = decrypt("Cldg")
+    print(result7)
+    expected8 = "Ahmed Loay Shahwan"
+    result8 = decrypt("Dkphg Ordb Vkdkzdq")
+    print(result8)
+    assert expected5 == result5
+    assert expected6 == result6
+    assert expected7 == result7
+    assert expected8 == result8
