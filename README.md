@@ -1,14 +1,20 @@
 # Robusta Task
 
-## Prerequisites
+## Prepare
 
-- Python
+> On Ubuntu
 
-## Install
-
+- Install Python 3.8, then
 - `$ pip install poetry`
 - `$ poetry install`
 - `$ poetry shell`
+
+> Using Docker
+
+- Make sure docker is installed, cd into the project directory, then
+- `$ docker build -t robusta_task .`
+- `$ docker run -it robusta_task`
+- `$ poetry shell` to activate the virtualenv inside the container
 
 ## Run
 

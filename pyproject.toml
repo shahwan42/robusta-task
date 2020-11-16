@@ -12,7 +12,6 @@ requests = "^2.25.0"
 
 [tool.poetry.dev-dependencies]
 flake8-black = "^0.2.1"
-docker-compose = "^1.27.4"
 ipython = "^7.19.0"
 ipdb = "^0.13.4"
 pytest = "^6.1.2"
