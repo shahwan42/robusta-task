@@ -1,3 +1,5 @@
+import json
+
 from robusta_task import utils
 
 
@@ -26,6 +28,9 @@ def encrypt(text: str):
 
 
 def decrypt(encrypted_text: list):
+    if type(encrypted_text):
+        encrypted_text = json.loads(encrypted_text)
+
     result = ""
     for enc_char in encrypted_text:
         char_bits = matrix_multiply(enc_char, utils.imatrix)
