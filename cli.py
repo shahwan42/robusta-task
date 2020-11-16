@@ -1,11 +1,8 @@
 import typer
 
-from robusta_task import (
-    matrix,
-    shift,
-)
+from robusta_task import shift, matrix, reverse
 
-ENCRYPTION_ALGORITHM = {"shift": shift, "matrix": matrix}
+ENCRYPTION_ALGORITHM = {"shift": shift, "matrix": matrix, "reverse": reverse}
 CHOICES = [key for key in ENCRYPTION_ALGORITHM]
 
 app = typer.Typer()
